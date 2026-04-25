@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 122, 0, 0.08), transparent 34rem),
+    linear-gradient(180deg, #fff7ed 0%, #f8fafc 34rem);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply rounded-lg border border-slate-200 bg-white shadow-soft;
+}
+
+.icon-button {
+  @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:border-primary hover:text-primary;
+}
+
+.primary-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-orange-600;
+}
+
+.secondary-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-3 font-semibold text-navy transition hover:-translate-y-0.5 hover:border-primary hover:text-primary;
+}
