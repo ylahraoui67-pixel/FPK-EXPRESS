@@ -1,6 +1,6 @@
 # FPK-EXPRESS
 
-AI-powered preorder & pickup platform for FPK Khouribga students.
+AI-powered preorder & pickup platform for FPK Khouribga students .
 
 FPK-EXPRESS is a V1 MVP that helps students preorder affordable meals and pick them up without waiting in long food or coffee queues. It is built from real field-survey validation with 23 FPK Khouribga students and is designed to feel like a credible campus startup product, not a classroom mockup.
 
