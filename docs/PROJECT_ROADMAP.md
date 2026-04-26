@@ -1,34 +1,68 @@
 # FPK-EXPRESS Project Roadmap
 
-## V1 MVP
+FPK-EXPRESS is an AI-powered preorder and pickup platform for FPK Khouribga students. This roadmap explains how the MVP can evolve from a university demo into a real campus startup.
 
-- Preorder flow for students.
-- Vendor dashboard for order status management.
-- Meal management with seeded Moroccan/FPK examples.
-- AI-like recommendations based on popularity and category.
-- Estimated waiting time based on active queue load.
-- Peak-hour prediction using campus break patterns.
-- Docker Compose for local deployment.
+## Phase 1 — MVP
 
-## V1.1 Demo Polish
+### Features
+- Landing page with problem, survey validation, and solution.
+- Student meal browsing and preorder flow.
+- Vendor dashboard for meals and orders.
+- AI-style recommendations, waiting time estimation, and peak-hour insights.
+- Basic analytics for orders, revenue, and popular meals.
 
-- Add real screenshots to the `screenshots/` folder.
-- Add QR pickup confirmation screen.
-- Add stock and availability controls for vendors.
-- Add clearer pickup window validation.
-- Add basic test suite for API endpoints.
+### Technical Improvements
+- Keep frontend responsive and mobile-first.
+- Improve API error handling.
+- Add loading states and empty states.
+- Prepare environment variables with `.env.example`.
+- Keep Docker Compose ready for local demos.
 
-## V2 Product Expansion
+### Business Goals
+- Validate the concept with FPK students.
+- Demonstrate the value of reducing queue waiting time.
+- Show a possible 1–2 MAD service fee model.
 
-- Student and vendor authentication.
-- Wallet or payment integration for MAD transactions.
-- Push notifications for `Ready` orders.
-- Vendor hygiene and reliability badges.
-- Admin analytics for campus operations.
+## Phase 2 — Pilot at FPK Khouribga
 
-## V3 Campus Network
+### Features
+- QR pickup confirmation.
+- Vendor stock limits and availability hours.
+- Student order history.
+- Better notification system for order status.
+- Hygiene and verified vendor badges.
 
-- Multi-vendor marketplace.
+### Technical Improvements
+- Add authentication for students and vendors.
+- Move from SQLite to PostgreSQL.
+- Add backend tests for key API routes.
+- Improve AI waiting time estimation using real order data.
+- Deploy frontend and backend online.
+
+### Business Goals
+- Test the system with one or two campus vendors.
+- Measure average time saved per student.
+- Collect real feedback and improve the workflow.
+- Prepare a short pitch deck for university or incubator support.
+
+## Phase 3 — Scale to Other Moroccan Universities
+
+### Features
 - Multi-campus support.
-- Personalized recommendations by budget, schedule, and order history.
-- More advanced demand prediction using historical order data.
+- Admin dashboard for universities.
+- Vendor onboarding flow.
+- Advanced meal recommendations by budget, time, and preference.
+- Analytics per campus and vendor.
+
+### Technical Improvements
+- Scalable cloud deployment.
+- Role-based access control.
+- Monitoring and logging.
+- Payment or wallet integration.
+- API versioning and documentation.
+
+### Business Goals
+- Expand beyond FPK Khouribga.
+- Build partnerships with campus vendors.
+- Create a sustainable revenue model through small service fees.
+- Position FPK-EXPRESS as a Moroccan student-life startup.
