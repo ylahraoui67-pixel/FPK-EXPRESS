@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { Activity, BrainCircuit, Clock, Sparkles, TrendingUp } from "lucide-react";
 import EmptyState from "./EmptyState.jsx";
+import { AIInsightsSkeleton } from "./Skeletons.jsx";
 
-export default function AIInsights({ recommendations, peakHours, stats }) {
+export default function AIInsights({ recommendations, peakHours, stats, isLoading = false }) {
   const summary = recommendations?.summary || {};
   const recommendationItems = recommendations?.recommendations || [];
   const predictions = peakHours?.predictions || [];
   const topPredictions = predictions.slice(0, 5);
+
+  if (isLoading) return <AIInsightsSkeleton />;
 
   return (
     <section className="bg-navy py-16 text-white">

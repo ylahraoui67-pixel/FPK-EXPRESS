@@ -162,6 +162,13 @@ FPK-EXPRESS includes graceful UI states for real demo conditions:
 - Vendor meal validation checks required fields, MAD price range, preparation time, popularity score, and image URL.
 - Inline validation messages keep the forms mobile-friendly and easy to correct during a live demo.
 
+## Mobile-first UX & Loading States
+
+- The navbar uses a responsive hamburger menu on mobile while keeping FPK-EXPRESS branding visible.
+- Desktop navigation remains direct and compact for demos on larger screens.
+- Skeleton loaders support smoother loading for meal grids, dashboards, and AI insights.
+- Loading states preserve the local demo fallback behavior if the backend is unavailable.
+
 ## Future Improvements
 
 - Student accounts and vendor accounts.

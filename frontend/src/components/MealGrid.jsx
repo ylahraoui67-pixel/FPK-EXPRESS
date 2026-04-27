@@ -2,9 +2,10 @@ import { useMemo, useState } from "react";
 import { Search, SearchX, SlidersHorizontal } from "lucide-react";
 import MealCard from "./MealCard.jsx";
 import EmptyState from "./EmptyState.jsx";
+import { SkeletonGrid } from "./Skeletons.jsx";
 import { categories } from "../data/mockData.js";
 
-export default function MealGrid({ meals, orders, onSelectMeal }) {
+export default function MealGrid({ meals, orders, onSelectMeal, isLoading = false }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("Tous");
 
@@ -67,13 +68,17 @@ export default function MealGrid({ meals, orders, onSelectMeal }) {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {filteredMeals.map((meal) => (
-          <MealCard key={meal.id} meal={meal} onSelectMeal={onSelectMeal} />
-        ))}
-      </div>
+      {isLoading ? (
+        <SkeletonGrid count={8} />
+      ) : (
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {filteredMeals.map((meal) => (
+            <MealCard key={meal.id} meal={meal} onSelectMeal={onSelectMeal} />
+          ))}
+        </div>
+      )}
 
-      {filteredMeals.length === 0 && (
+      {!isLoading && filteredMeals.length === 0 && (
         <div className="mt-6">
           <EmptyState
             icon={SearchX}

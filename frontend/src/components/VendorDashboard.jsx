@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ClipboardList, Clock, DollarSign, Flame, ListOrdered, Plus, Store, Utensils } from "lucide-react";
 import ChartsSection from "./ChartsSection.jsx";
 import EmptyState from "./EmptyState.jsx";
+import { DashboardSkeleton } from "./Skeletons.jsx";
 import { categories } from "../data/mockData.js";
 import { hasValidationErrors, normalizeMealPayload, validateMealForm } from "../utils/validation.js";
 
@@ -40,7 +41,7 @@ function FieldError({ message }) {
   return <p className="mt-1 text-xs font-bold text-red-600">{message}</p>;
 }
 
-export default function VendorDashboard({ meals, orders, stats, onAddMeal, onStatusChange, onToast }) {
+export default function VendorDashboard({ meals, orders, stats, onAddMeal, onStatusChange, onToast, isLoading = false }) {
   const [form, setForm] = useState(defaultMeal);
   const [errors, setErrors] = useState({});
 
@@ -79,6 +80,8 @@ export default function VendorDashboard({ meals, orders, stats, onAddMeal, onSta
     { label: "Average waiting time", value: `${stats.average_waiting_time} min`, icon: Clock, tone: "bg-sky-50 text-sky-600" },
     { label: "Popular meal", value: stats.popular_meal, icon: Flame, tone: "bg-slate-100 text-navy" },
   ];
+
+  if (isLoading) return <DashboardSkeleton variant="vendor" />;
 
   return (
     <section className="space-y-8">

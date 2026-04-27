@@ -1,13 +1,16 @@
 import { Clock, ClipboardList, PackageCheck, Sparkles, TimerReset } from "lucide-react";
 import EmptyState from "./EmptyState.jsx";
+import { DashboardSkeleton } from "./Skeletons.jsx";
 import { statusSteps } from "../data/mockData.js";
 
 function statusIndex(status) {
   return statusSteps.indexOf(status);
 }
 
-export default function StudentDashboard({ currentOrder, recommendations, onSelectMeal }) {
+export default function StudentDashboard({ currentOrder, recommendations, onSelectMeal, isLoading = false }) {
   const currentStep = statusIndex(currentOrder?.status || "Pending");
+
+  if (isLoading) return <DashboardSkeleton variant="student" />;
 
   return (
     <section className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
