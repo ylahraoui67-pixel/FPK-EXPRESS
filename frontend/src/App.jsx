@@ -197,7 +197,7 @@ export default function App() {
           <ProblemSection />
           <SolutionSection />
           <HowItWorks />
-          <AIInsights recommendations={recommendations} peakHours={peakHours} stats={stats} />
+          <AIInsights recommendations={recommendations} peakHours={peakHours} stats={stats} isLoading={isLoading} />
           <MealPreviewSection meals={meals.slice(0, 4)} onSelectMeal={setSelectedMeal} />
         </main>
       )}
@@ -208,8 +208,9 @@ export default function App() {
             currentOrder={currentOrder}
             recommendations={recommendations.recommendations || []}
             onSelectMeal={setSelectedMeal}
+            isLoading={isLoading}
           />
-          <MealGrid meals={meals} orders={orders} onSelectMeal={setSelectedMeal} />
+          <MealGrid meals={meals} orders={orders} onSelectMeal={setSelectedMeal} isLoading={isLoading} />
         </main>
       )}
 
@@ -222,6 +223,7 @@ export default function App() {
             onAddMeal={handleAddMeal}
             onStatusChange={handleStatusChange}
             onToast={showToast}
+            isLoading={isLoading}
           />
         </main>
       )}
