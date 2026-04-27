@@ -217,3 +217,5 @@ Coming soon: dark mode support for better UX.
 
 ## Performance
 FPK-EXPRESS is designed with a lightweight frontend, optimized API structure, and Docker-ready deployment workflow.
+
+<!-- UX polish complete -->
